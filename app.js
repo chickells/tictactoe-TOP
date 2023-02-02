@@ -56,6 +56,8 @@ let gameBoard = (() => {
         // their solution does this:
         // set cellIndex to the value of this.cellIndex
         // then checks if spot has already been clicked/if game isn't running, returns nothing
+        const cellIndex = this.getAttribute('cellIndex')
+        console.log(this);
 
 
         // then calls updateCell(this, cellIndex), which finds this cell
