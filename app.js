@@ -59,6 +59,8 @@ let gameBoard = (() => {
         const cellIndex = this.getAttribute('cellIndex')
         console.log(this);
 
+        // https://www.youtube.com/watch?v=AnmwHjpEhtA
+
 
         // then calls updateCell(this, cellIndex), which finds this cell
         // and updates text content to player mark, then updates
