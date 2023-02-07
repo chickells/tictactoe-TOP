@@ -9,25 +9,20 @@
     <script src="./app.js" defer></script>
 </head>
 <body>
-    <div class="gameContainer">
-        <h1>Tic Tac Toe</h1>
-        <div id="cellContainer">
-            <div class="cell" cellindex="0">
-                <script>
-                    console.log(cell.this);
-                </script>
-            </div>
-            <div class="cell" cellindex="1"></div>
-            <div class="cell" cellindex="2"></div>
-            <div class="cell" cellindex="3"></div>
-            <div class="cell" cellindex="4"></div>
-            <div class="cell" cellindex="5"></div>
-            <div class="cell" cellindex="6"></div>
-            <div class="cell" cellindex="7"></div>
-            <div class="cell" cellindex="8"></div>            
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
         </div>
-        <h2 id="statusText"></h2>
-        <button id="restartBtn">Restart</button>
-    </div>
+        <div class="winning-message" id="winningMessage">
+            <div data-winning-message-text></div>
+            <button id="restartButton">Restart</button>
+        </div>
 </body>
 </html>
