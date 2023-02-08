@@ -31,9 +31,12 @@ const gameBoard = (() => {
     function startGame() {
         circleTurn = false
         cellElements.forEach(cell => {
+            cell.classList.remove(X_CLASS)
+            cell.classList.remove(CIRCLE_CLASS)
             cell.addEventListener('click', handleClick, { once: true})
         })
         setBoardHoverClass()
+        winningMessageElement.classList.remove('show')
     }
     
     function handleClick(e) {
@@ -100,15 +103,7 @@ const gameBoard = (() => {
         winningMessageElement.classList.add('show')
       }
 
-      restartBtn.addEventListener('click', restartGame)
-      
-
-      // CAN PUT ALL OF THIS FUNCTIONALITY INSIDE START GAME
-      function restartGame() {
-        console.log('restart');
-        winningMessageElement.classList.remove('show')
-        startGame()
-      }
+      restartBtn.addEventListener('click', startGame)
 
 })()
 
