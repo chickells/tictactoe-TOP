@@ -16,6 +16,7 @@ const gameBoard = (() => {
     ]
     const cellElements = document.querySelectorAll('[data-cell]')
     const board = document.getElementById('board')
+    const restartBtn = document.getElementById('restartButton')
 
     // container for bg popup
     const winningMessageElement = document.getElementById('winningMessage')
@@ -41,13 +42,10 @@ const gameBoard = (() => {
         const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
         placeMark(cell, currentClass)
         if (checkWin(currentClass)){
-            console.log('win');
             endGame(false)
         } else if (isDraw()) {
-            console.log('draw');
             endGame(true)
         } else {
-            console.log('new turn');
             swapTurns()
             setBoardHoverClass()
         }        
@@ -100,6 +98,16 @@ const gameBoard = (() => {
           winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
         }
         winningMessageElement.classList.add('show')
+      }
+
+      restartBtn.addEventListener('click', restartGame)
+      
+
+      // CAN PUT ALL OF THIS FUNCTIONALITY INSIDE START GAME
+      function restartGame() {
+        console.log('restart');
+        winningMessageElement.classList.remove('show')
+        startGame()
       }
 
 })()
